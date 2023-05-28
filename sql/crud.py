@@ -56,6 +56,7 @@ def get_users(db: Session, skip: int = 0, limit: int = 100):
 
 
 def delete_user(db: Session, user: models.User):
+    delete_progress(db, user)
     db.delete(user)
     db.commit()
 
